@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor da Casa | Cardápio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="menu">
+  <header class="client-mini-topbar">
+    <strong>Sabor da Casa</strong>
+    <a class="admin-link compact-admin-link" href="admin.html">Painel admin</a>
+  </header>
+
+  <main class="menu-shell">
+    <section class="hero">
+      <div>
+        <p class="brand-mini">Sabor da Casa</p>
+        <span class="pill">Pedido rápido</span>
+        <h2>Monte seu lanche personalizado</h2>
+        <p>Escolha ingredientes, inclua adicionais e envie tudo pronto para a lanchonete.</p>
+      </div>
+      <button class="cart-fab" id="openCart" type="button" aria-label="Abrir carrinho">
+        <svg class="cart-icon" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M6.2 6h15.1l-1.8 8.2a2 2 0 0 1-2 1.6H8.4a2 2 0 0 1-2-1.7L5.2 3.9H2.8" />
+          <circle cx="9.2" cy="20" r="1.4" />
+          <circle cx="17.4" cy="20" r="1.4" />
+        </svg>
+        <span id="cartCount">0</span>
+      </button>
+    </section>
+
+    <nav class="category-tabs" id="categoryTabs" aria-label="Categorias"></nav>
+
+    <section id="productsArea" class="products-area"></section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras">
+    <div class="cart-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Seu pedido</p>
+          <h2>Carrinho</h2>
+        </div>
+        <button class="icon-button" id="closeCart" type="button" aria-label="Fechar carrinho">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <button class="primary-button whatsapp-button" id="checkoutBtn" type="button">
+          Finalizar pedido no WhatsApp
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="productModal" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Personalização</p>
+          <h2 id="modalTitle">Produto</h2>
+        </div>
+        <button class="icon-button" id="closeProductModal" type="button" aria-label="Fechar modal">×</button>
+      </div>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
